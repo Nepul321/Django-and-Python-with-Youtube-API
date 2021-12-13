@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Results for {{ searched }}
+{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <h3>Results for {{ searched }}</h3>
+    {% for item in data %}
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ item.snippet.thumbnails.high.url }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <p style="font-size: 25px;" class="card-title"><a href="{{ baseurl }}{{ item.id.videoId }}" target="_blank">{{ item.snippet.title|safe }}</a></p>
+              <p class="card-text">{{ item.snippet.description|safe }}</p>
+              <p class="card-text"><small class="text-muted">By <a href="https://www.youtube.com/channel/{{ item.snippet.channelId }}" target="_blank">{{ item.snippet.channelTitle|safe }}</a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor  %}
+    <a href="{% url 'search' %}" class="btn btn-primary my-3">Back to search</a>
+</div>
+{% endblock content %}

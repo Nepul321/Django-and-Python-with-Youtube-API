@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search for videos
+{% endblock title %}
+
+{% block content %}
+<div class="container my-5 text-center">
+    <h1>Search for videos</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" name="searched" class="form-control" />
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
