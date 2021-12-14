@@ -26,7 +26,7 @@ Next go to the src directory and create a dotenv file and configure the followin
 
 ```
 SECRET_KEY=<your-secret-key>
-YOUTUBE_API_KEY=youryoutubeapikey
+YOUTUBE_API_KEY=<youryoutubeapikey>
 ```
 
 Then migrate the databases and runserver.
